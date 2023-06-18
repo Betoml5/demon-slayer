@@ -1,4 +1,11 @@
 const $charactersContainer = document.querySelector("#charactersContainer");
+const $menu = document.querySelector("#menu");
+const $btnMenu = document.querySelector("#btn-menu");
+
+
+$btnMenu.addEventListener("click", () => {
+  $menu.classList.toggle("show-menu");
+});
 
 const getCharacters = async () => {
   const response = await fetch(

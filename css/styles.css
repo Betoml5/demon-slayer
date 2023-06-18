@@ -39,11 +39,32 @@ body {
 .header a {
   color: var(--color-quaternary);
   text-decoration: none;
+  margin-left: 12px;
 }
 
 .header img {
   width: 50px;
   height: 50px;
+}
+
+.header__menu-wrapper {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+}
+
+.header__menu-wrapper img {
+  width: 30px;
+  height: 30px;
+}
+
+.header__menu-btn {
+  border: none;
+  background-color: none;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
 }
 
 .main {
@@ -58,11 +79,21 @@ body {
 }
 
 .menu {
-  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-secondary);
+  position: absolute;
+  top: 90px;
+  left: -500px;
+  padding: 20px;
+  height: 90%;
+  transition: 300ms all ease;
+  /* margin-top: 10px; */
 }
 
 .menu ul {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
@@ -72,7 +103,7 @@ body {
 .menu ul li {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: left;
   border-radius: 4px;
   padding: 10px;
   background-color: var(--color-secondary);
@@ -208,7 +239,7 @@ body {
 
 .main__manga {
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
   font-size: 1.4rem;
   margin-top: 20px;
@@ -351,6 +382,10 @@ body {
 }
 .footer p {
   margin: 10px 0px;
+}
+
+.show-menu {
+  left: 0;
 }
 
 @media screen and (min-width: 768px) {
