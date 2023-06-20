@@ -200,6 +200,13 @@ body {
   margin-top: 20px;
 }
 
+.main__episodes h2 {
+  grid-column: 1/-1;
+}
+.main__titles h3 {
+  display: none;
+}
+
 .main__episodes-trailer {
   grid-column: 1/-1;
   width: 100%;
@@ -222,8 +229,8 @@ body {
 
 .main__episodes-card-play {
   position: absolute;
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 30px;
   left: 50%;
   top: 35%;
 }
@@ -254,8 +261,12 @@ body {
 }
 
 .main__episodes-card-description h3 {
-  font-size: 1.6rem;
+  font-size: 1.2rem;
   margin-bottom: 20px;
+}
+
+.main__episodes-card-description p {
+  font-size: 1rem;
 }
 
 .main__manga {
@@ -423,7 +434,42 @@ body {
   }
 
   .main__episodes {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .main__episodes-trailer {
+    grid-column: 1 / 4;
+  }
+
+  .main__episodes .first {
+    flex-direction: column;
+    grid-column: 4/-1;
+    grid-row: 1/2;
+  }
+  .main__episodes-card-thumb-container {
+    width: 100%;
+    height: 100%;
+  }
+  .main__episodes-card-description {
+    width: 100%;
+  }
+
+  .main__episodes-card-play {
+    top: 45%;
+    left: 45%;
+    width: 50px;
+    height: 50px;
+  }
+
+  .main__titles {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .main__titles h3 {
+    font-size: 2.4rem;
+    display: inherit;
   }
 
   .main__manga {
