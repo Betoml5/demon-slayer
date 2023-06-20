@@ -88,6 +88,7 @@ body {
   padding: 20px;
   height: 90%;
   transition: 300ms all ease;
+  z-index: 9999;
   /* margin-top: 10px; */
 }
 
