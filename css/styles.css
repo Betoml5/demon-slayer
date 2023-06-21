@@ -422,6 +422,43 @@ body {
   left: 0;
 }
 
+.main__characters-card-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  background-color: var(--color-secondary);
+}
+
+.main__characters-card-details-image-container {
+  width: 100%;
+  height: 100%;
+}
+
+.main__characters-card-details-image-container img {
+  width: 100%;
+}
+
+.main__characters-card-details-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  padding: 10px;
+  color: #fff;
+  font-size: 1.4rem;
+}
+
+.goBack {
+  text-decoration: none;
+  font-size: 2rem;
+  color: #fff;
+  background-color: var(--color-secondary);
+  padding: 10px;
+  border-radius: 4px;
+}
+
 @media screen and (min-width: 768px) {
   .main__characters {
     grid-template-columns: repeat(3, 1fr);

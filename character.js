@@ -14,25 +14,33 @@ const getCharacter = async () => {
 };
 
 const renderCharacter = async () => {
-  console.log("llamada");
-  //   const $characterContainer = document.querySelector("#characterContainer");
   $characterDetailsContainer.innerHTML = `<div class="loader">Cargando...</div>`;
   document.title = "Cargando...";
+
   try {
     const character = await getCharacter();
+    const Imageurl = character[0].gallery[0];
+    const image = Imageurl.split(".png")[0];
     const characterTemplate = `
-            <div class="main__characters-card">
-                <div class="main__characters-card-image-container"main__characters-card-image-container">
-                    <img src=${character[0].image} alt="${character[0].name}" />
+            <div class="main__characters-card-details">
+                <div class="main__characters-card-details-image-container">
+                    <img src=${image}.png  alt="${character[0].name}" />
                 </div>
-                <p>${character[0].name}</p>
-                <p>${character[0].description}</p>
+                <div class="main__characters-card-details-description">
+                  <p>Nombre: ${character[0].name}</p>
+                  <p>Edad: ${character[0].age} </p>
+                  <p>Peso: ${character[0].weight} </p>
+                  <p>Altura: ${character[0].height} </p>
+                  <p>Cumpleaños: ${character[0].birthday} </p>
+
+
+                </div>
+               
             </div>
             `;
     document.title = character[0].name;
     $characterDetailsContainer.innerHTML = characterTemplate;
   } catch (error) {
-    console.log(error);
     $characterDetailsContainer.innerHTML = `<div class="error">Error al cargar el personaje</div>`;
   }
 };
