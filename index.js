@@ -2,7 +2,6 @@ const $charactersContainer = document.querySelector("#charactersContainer");
 const $menu = document.querySelector("#menu");
 const $btnMenu = document.querySelector("#btn-menu");
 
-
 $btnMenu.addEventListener("click", () => {
   $menu.classList.toggle("show-menu");
 });
@@ -21,15 +20,16 @@ const renderCharacters = async () => {
   try {
     const characters = await getCharacters();
     const charactersTemplate = characters.map((character) => {
-      const url = character.image;
-      const image = url.split(".png")[0];
+      const Imageurl = character.image;
+      const image = Imageurl.split(".png")[0];
+      const characterDetailsUrl = `character-details.html?url=${character.url}`; // Agrega un parámetro "id" con el valor del ID del personaje
       return `
           <div class="main__characters-card">
               <div class="main__characters-card-image-container"main__characters-card-image-container">
                   <img src=${image}.png alt="${character.name}" />
               </div>
               <p>${character.name}</p>
-              <p>Mas informacion acerca de ${character.name} <a href='${character.url}'>ver</a></p>
+              <p>Mas informacion acerca de ${character.name} <a href="${characterDetailsUrl}">ver</a></p>
           </div>
           `;
     });
