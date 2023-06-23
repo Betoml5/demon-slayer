@@ -149,6 +149,7 @@ body {
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
   margin-top: 20px;
+  max-width: 900px;
 }
 
 .main__characters-card {
